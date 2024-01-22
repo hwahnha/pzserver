@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# /etc/apt/sources.list 파일 백업
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+
+# 'contrib non-free' 저장소 추가
+sudo sed -i 's/$/ contrib non-free/' /etc/apt/sources.list
+
+# /etc/sudoers 파일 백업
+sudo cp /etc/sudoers /etc/sudoers.backup
+
+# 'steam' 및 'pzuser' 사용자에게 sudo 권한 부여
+echo "steam ALL=(ALL:ALL) ALL" | sudo EDITOR='tee -a' visudo
+echo "pzuser ALL=(ALL:ALL) ALL" | sudo EDITOR='tee -a' visudo
+
+# 시스템 업데이트
+sudo apt update
