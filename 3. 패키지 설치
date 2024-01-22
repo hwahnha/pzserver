@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 필요한 패키지 설치
+sudo apt install software-properties-common -y
+
+# i386 아키텍처 추가
+sudo dpkg --add-architecture i386
+
+# 시스템 업데이트 및 업그레이드
+sudo apt update && sudo apt upgrade -y
+
+# 추가 필요 패키지 설치
+# 예시: sudo apt install <패키지명> -y
+# 여기에 필요한 패키지를 추가하세요.
+
+echo "패키지 설치 및 설정이 완료되었습니다."
