@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# SteamCMD 설치
+install_steamcmd() {
+    mkdir -p ~/steamcmd
+    cd ~/steamcmd
+    wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+    tar -xvzf steamcmd_linux.tar.gz
+    rm steamcmd_linux.tar.gz
+}
+
+# SteamCMD 실행 및 Project Zomboid 게임 서버 설치
+install_server() {
+    ~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/pzserver +app_update 380870 validate +quit
+}
+
+# 필요한 디렉터리 생성
+mkdir -p ~/pzserver
+mkdir -p ~/Zomboid/mods
+
+# SteamCMD 및 게임 서버 설치 함수 호출
+install_steamcmd
+install_server
+
+echo "게임 서버 설치가 완료되었습니다."
