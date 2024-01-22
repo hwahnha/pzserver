@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#두 개의 사용자(steam 및 pzuser)를 추가(암호root) / SUDOER
+#echo와 tee 명령어를 사용하여 /etc/sudoers 파일에 새 규칙을 추가
+
+# 사용자 'steam' 추가 및 패스워드 설정
+sudo useradd -m steam
+echo "root" | sudo passwd steam --stdin
+
+# 'steam' 사용자에게 sudo 권한 부여
+echo "steam ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
+
+# 사용자 'pzuser' 추가 및 패스워드 설정 (옵션)
+sudo useradd -m pzuser
+echo "root" | sudo passwd pzuser --stdin
+
+# 'pzuser' 사용자에게 sudo 권한 부여
+echo "pzuser ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
