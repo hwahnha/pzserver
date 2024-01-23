@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 필요한 패키지 설치
+sudo -u steam -s
 sudo apt install software-properties-common -y
 
 # i386 아키텍처 추가
