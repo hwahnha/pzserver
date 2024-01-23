@@ -5,14 +5,14 @@
 
 # 사용자 'steam' 추가 및 패스워드 설정
 sudo useradd -m steam
-echo "root" | sudo passwd steam --stdin
+echo "steam:root" | sudo chpasswd
 
 # 'steam' 사용자에게 sudo 권한 부여
 echo "steam ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 
-# 사용자 'pzuser' 추가 및 패스워드 설정 (옵션)
+# 사용자 'pzuser' 추가 및 패스워드 설정
 sudo useradd -m pzuser
-echo "steam:root" | sudo chpasswd
+echo "pzuser:root" | sudo chpasswd
 
 # 'pzuser' 사용자에게 sudo 권한 부여
 echo "pzuser ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
