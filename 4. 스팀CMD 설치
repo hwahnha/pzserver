@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# SteamCMD 설치
-install_steamcmd() {
-    mkdir -p ~/steamcmd
-    cd ~/steamcmd
-    wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-    tar -xvzf steamcmd_linux.tar.gz
-    rm steamcmd_linux.tar.gz
-}
+# 필요한 패키지 설치
+sudo apt install lib32gcc-s1 steamcmd -y
 
-# SteamCMD 실행 및 Project Zomboid 게임 서버 설치
-install_server() {
-    ~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/pzserver +app_update 380870 validate +quit
-}
+# steamcmd 심볼릭 링크 생성
+sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
 
-# 필요한 디렉터리 생성
-mkdir -p ~/pzserver
-mkdir -p ~/Zomboid/mods
+# 서버 설치 디렉터리 생성 및 소유권 변경
+sudo mkdir -p /opt/pzserver
+sudo chown pzuser:pzuser /opt/pzserver
 
-# SteamCMD 및 게임 서버 설치 함수 호출
-install_steamcmd
-install_server
+# Project Zomboid 업데이트 스크립트 생성
+echo "@ShutdownOnFailedCommand 1" > /home/pzuser/update_zomboid.txt
+echo "@NoPromptForPassword 1" >> /home/pzuser/update_zomboid.txt
+echo "force_install_dir /opt/pzserver/" >> /home/pzuser/update_zomboid.txt
+echo "login anonymous" >> /home/pzuser/update_zomboid.txt
+echo "app_update 380870 validate" >> /home/pzuser/update_zomboid.txt
+echo "quit" >> /home/pzuser/update_zomboid.txt
 
-echo "게임 서버 설치가 완료되었습니다."
+# 스크립트 실행 권한 부여 및 실행
+sudo chmod +x /home/pzuser/update_zomboid.txt
+sudo -u pzuser steamcmd +runscript /home/pzuser/update_zomboid.txt
+
+echo "Project Zomboid 서버 설치가 완료되었습니다."
