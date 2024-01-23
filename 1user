@@ -12,7 +12,7 @@ echo "steam ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 
 # 사용자 'pzuser' 추가 및 패스워드 설정 (옵션)
 sudo useradd -m pzuser
-echo "root" | sudo passwd pzuser --stdin
+echo "steam:root" | sudo chpasswd
 
 # 'pzuser' 사용자에게 sudo 권한 부여
 echo "pzuser ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
