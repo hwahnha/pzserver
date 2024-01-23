@@ -7,9 +7,9 @@
 # 'pzuser' 계정 생성, 패스워드 'root'설정, sudo 권한 부여
 su -c "sudo adduser pzuser"
 echo "pzuser:root" | sudo chpasswd
-echo "pzuser ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
+#echo "pzuser ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 
 # 사용자 'steam' 추가, 패스워드 설정, sudo 권한 부여
 sudo useradd -m steam
 echo "steam:root" | sudo chpasswd
-echo "steam ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
+#echo "steam ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
