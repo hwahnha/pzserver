@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# 특정 클래스 파일들의 소유권 변경
+sudo chown pzuser:pzuser /home/rsa/download/ZombieCountOptimiser.class
+sudo chown pzuser:pzuser /home/rsa/download/NetworkZombiePacker.class
+
+# 사용자에게 서버 이름 입력 요청
+read -p "Enter the server name: " SERVER_NAME
+
+# 서버 설정 파일 복사 및 소유권 변경을 위한 스크립트 생성
+echo "cp /home/rsa/download/${SERVER_NAME}.ini /home/pzuser/Zomboid/Server/${SERVER_NAME}.ini && \
+cp /home/rsa/download/${SERVER_NAME}_SandboxVars.lua /home/pzuser/Zomboid/Server/${SERVER_NAME}_SandboxVars.lua && \
+cp /home/rsa/download/${SERVER_NAME}_spawnregions.lua /home/pzuser/Zomboid/Server/${SERVER_NAME}_spawnregions.lua && \
+cp /home/rsa/download/${SERVER_NAME}_spawnpoints.lua /home/pzuser/Zomboid/Server/${SERVER_NAME}_spawnpoints.lua; \
+chown -R pzuser:pzuser /home/pzuser/Zomboid/Server" > /home/pzuser/update_server.sh
+
+# 스크립트 실행 권한 부여 및 실행
+sudo chmod 744 /home/pzuser/update_server.sh
+sudo mkdir -p /home/pzuser/Zomboid/Server
+bash /home/pzuser/update_server.sh
+
+# 게임 서버 업데이트 및 클래스 파일 복사를 위한 스크립트 생성
+echo "steamcmd +runscript \$HOME/update_zomboid.txt && \
+cp /home/rsa/download/ZombieCountOptimiser.class /opt/pzserver/java/zombie/popman/ZombieCountOptimiser.class && \
+cp /home/rsa/download/NetworkZombiePacker.class /opt/pzserver/java/zombie/popman/NetworkZombiePacker.class && \
+vim /opt/pzserver/ProjectZomboid64.json" > /home/pzuser/update_zomboid.sh
+
+# 스크립트 실행 권한 부여 및 실행
+chmod 744 /home/pzuser/update_zomboid.sh
+bash /home/pzuser/update_zomboid.sh
