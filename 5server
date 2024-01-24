@@ -26,5 +26,5 @@ cp /home/rsa/download/NetworkZombiePacker.class /opt/pzserver/java/zombie/popman
 vim /opt/pzserver/ProjectZomboid64.json" > /home/pzuser/update_zomboid.sh
 
 # 스크립트 실행 권한 부여 및 실행
-chmod 744 /home/pzuser/update_zomboid.sh
-bash /home/pzuser/update_zomboid.sh
+sudo chmod 744 /home/pzuser/update_zomboid.sh
+sudo bash /home/pzuser/update_zomboid.sh
