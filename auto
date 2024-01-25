@@ -3,9 +3,12 @@
 # 현재 사용자의 홈 디렉터리에 실행 권한 부여
 sudo chmod +x -R /home/$USER/pzserver/
 
-# 각 스크립트 파일을 현재 사용자의 권한으로 실행
+# 원래 사용자의 홈 디렉터리 저장
+ORIGINAL_USER_HOME=/home/$USER
+
+# 각 스크립트 파일을 해당 사용자의 권한으로 실행
 sudo -u $USER -s bash -c '/home/$USER/pzserver/1user'
 sudo -u $USER -s bash -c '/home/$USER/pzserver/2permition'
-sudo -u steam -s bash -c '/home/$USER/pzserver/3package'
-sudo -u pzuser -s bash -c '/home/$USER/pzserver/4STEAMCMD'
-sudo -u pzuser -s bash -c '/home/$USER/pzserver/5server'
+sudo -u steam -s bash -c '${ORIGINAL_USER_HOME}/pzserver/3package'
+sudo -u pzuser -s bash -c '${ORIGINAL_USER_HOME}/pzserver/4STEAMCMD'
+sudo -u pzuser -s bash -c '${ORIGINAL_USER_HOME}/pzserver/5server'
