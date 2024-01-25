@@ -1,3 +1,5 @@
+sudo chmod +x -R '/home/yr_kim0419glow/pzserver'
+
 sudo -u yr_kim0419glow -s bash -c '/home/yr_kim0419glow/pzserver/1user'
 sudo -u yr_kim0419glow -s bash -c '/home/yr_kim0419glow/pzserver/2permition'
 sudo -u steam -s bash -c '/home/yr_kim0419glow/pzserver/3package'
