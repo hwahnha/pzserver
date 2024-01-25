@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# 최고 권한으로 steam셸 시작
-sudo -u steam -s
-
 # 필요한 패키지 설치
 sudo apt install software-properties-common -y
 
