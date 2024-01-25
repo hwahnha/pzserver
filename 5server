@@ -31,5 +31,5 @@ sudo chmod +x /home/pzuser/update_zomboid.sh
 sudo bash /home/pzuser/update_zomboid.sh
 
 # start_server.sh 파일 생성 및 편집과 권한 부여
-echo "cd /opt/pzserver && bash start-server.sh -servername \${SERVER_NAME}" > start_server.sh
+echo "cd /opt/pzserver && bash start-server.sh -servername "${SERVER_NAME} > start_server.sh
 chmod +x start_server.sh
