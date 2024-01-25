@@ -16,8 +16,10 @@ chown -R pzuser:pzuser /home/pzuser/Zomboid/Server" > /home/pzuser/update_server
 
 # 스크립트 실행 권한 부여 및 실행
 sudo chmod 744 /home/pzuser/update_server.sh
+sudo chmod +x /home/pzuser/update_server.sh
 sudo mkdir -p /home/pzuser/Zomboid/Server
 sudo chmod 744 update_zombid.sh
+sudo chmod +x update_zombid.sh
 sudo bash /home/pzuser/update_server.sh
 
 # 게임 서버 업데이트 및 클래스 파일 복사를 위한 스크립트 생성
