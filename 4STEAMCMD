@@ -2,8 +2,7 @@
 
 
 
-# steamcmd 심볼릭 링크 생성
-sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
+
 
 # 서버 설치 디렉터리 생성 및 소유권 변경
 sudo mkdir -p /opt/pzserver
