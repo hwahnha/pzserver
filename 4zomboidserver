@@ -14,6 +14,6 @@ echo "quit" >> /home/pzuser/update_zomboid.txt
 
 # 스크립트 실행 권한 부여 및 실행
 sudo chmod +x /home/pzuser/update_zomboid.txt
-steamcmd +runscript $HOME/update_zomboid.txt
+steamcmd +runscript /home/pzuser/update_zomboid.txt
 
 echo "Project Zomboid 서버 설치가 완료되었습니다."
