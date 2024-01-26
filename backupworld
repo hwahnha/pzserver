@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 사용자에게 서버 이름 입력 요청 후 서버 복사
+read -p "Enter the server name: " SERVER_NAME
+sudo cp -R Zomboid/Saves/Multiplayer/${SERVER_NAME} /home/rsa/download/${SERVER_NAME}
