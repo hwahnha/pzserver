@@ -12,6 +12,9 @@ sudo apt update && sudo apt upgrade -y
 # 필요한 패키지 설치
 sudo apt install lib32gcc-s1 steamcmd -y
 
+# steamcmd 심볼릭 링크 생성
+sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
+
 # 추가 필요 패키지 설치
 # 예시: sudo apt install <패키지명> -y
 # 여기에 필요한 패키지를 추가하세요.
