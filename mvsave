@@ -1,7 +1,10 @@
+#!/bin/bash
 
+# 사용자에게 서버 이름 입력 요청
+read -p "Enter the server name: " SERVER_NAME
 
-sudo chown -R pzuser:pzuser /home/rsa/download/(서버 이름)
+sudo chown -R pzuser:pzuser /home/rsa/download/${SERVER_NAME}
 
 mkdir -p Zomboid/Saves/Multiplayer
 
-sudo mv /home/rsa/download/(서버 이름) /home/pzuser/Zomboid/Saves/Multiplayer/(서버 이름)
+sudo mv /home/rsa/download/${SERVER_NAME} /home/pzuser/Zomboid/Saves/Multiplayer/${SERVER_NAME}
