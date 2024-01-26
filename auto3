@@ -10,5 +10,5 @@ ORIGINAL_USER_HOME=/home/$USER
 sudo -u $USER -s bash -c '/home/$USER/pzserver/1user'
 sudo -u $USER -s bash -c '/home/$USER/pzserver/2permition'
 sudo -u steam -s bash -c "${ORIGINAL_USER_HOME}/pzserver/3packagesteamcmd"
-sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/4zomboidserver"
-sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/5myserver"
+#sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/4zomboidserver"
+#sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/5myserver"
