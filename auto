@@ -9,6 +9,6 @@ ORIGINAL_USER_HOME=/home/$USER
 # 각 스크립트 파일을 해당 사용자의 권한으로 실행
 sudo -u $USER -s bash -c '/home/$USER/pzserver/1user'
 sudo -u $USER -s bash -c '/home/$USER/pzserver/2permition'
-sudo -u steam -s bash -c "${ORIGINAL_USER_HOME}/pzserver/3package&steamcmd"
+sudo -u steam -s bash -c "${ORIGINAL_USER_HOME}/pzserver/3packagesteamcmd"
 sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/4zomboidserver"
 sudo -u pzuser -s bash -c "${ORIGINAL_USER_HOME}/pzserver/5myserver"
