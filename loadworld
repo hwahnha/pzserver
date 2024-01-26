@@ -7,4 +7,4 @@ sudo chown -R pzuser:pzuser /home/rsa/download/${SERVER_NAME}
 
 mkdir -p Zomboid/Saves/Multiplayer
 
-sudo cp -R /home/rsa/download/${SERVER_NAME} /home/pzuser/Zomboid/Saves/Multiplayer/${SERVER_NAME}
+sudo cp -R /home/rsa/download/${SERVER_NAME} /home/pzuser/Zomboid/Saves/Multiplayer
